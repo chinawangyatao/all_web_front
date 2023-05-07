@@ -44,17 +44,17 @@
           @click="isOpenClickArticle"
         >
           <div class="container md:w-[15rem] lg:w-[25rem] flex justify-center">
-            <img class="rounded-lg" :src="item.imageUrl" />
+            <img class="rounded-lg" :src="item.coverUrl" />
           </div>
           <div
             class="px-5 mt-3 text-white animate__animated animate__slideInRight"
           >
-            <div class="font-bold text-zinc-600 text-xs">
-              {{ item.timeData }}
-            </div>
             <div class="text-md w-40">
               {{ item.title }}
             </div>
+              <div class="font-bold text-zinc-600 text-xs w-40">
+                  {{ item.summary }}
+              </div>
             <div
               class="flex items-center mt-10 text-zinc-600 group-hover:text-white duration-500"
             >
@@ -210,22 +210,34 @@ import ArticleDetails from "@/views/detailsPage/articleDetails.vue";
 const { home } = useStore();
 onMounted(() => {
   home.getNewArticleData();
-  getAboutUsData();
-  getcodeData();
-  gethouseData();
-  getRecommendData();
+  // getAboutUsData();
+  // getcodeData();
+  // gethouseData();
+  // getRecommendData();
 });
+
+
+
+
+
+
+
+
+
+
+
 // 获取关于自己数据
 let titleText = ref("");
 const getAboutUsData = async () => {
   const res = await getAboutUs();
-  titleText.value = res[0].title;
+  titleText.value = res.content;
 };
 
 // 获取代码块数据
 let codeText = ref("");
 const getcodeData = async () => {
   const res = await getCode();
+    console.log(res)
   codeText.value = res;
 };
 // 获取奇妙屋的数据

@@ -16,7 +16,7 @@
         @click="changeAction(index)"
         :class="action === index ? 'text-white duration-500' : ' '"
       >
-        {{ item.name }}
+        {{ item }}
       </li>
     </ul>
 

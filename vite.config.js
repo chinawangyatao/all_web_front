@@ -12,8 +12,8 @@ export default defineConfig({
     // port: 8888,
     proxy: {
       "/api": {
-        target: "http://localhost:3000/",
-        // target: "http://123.168.95.215:3000",
+        // target: "http://localhost:3000/",
+        target: "http://8.130.53.142:8081/api/v1/public",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""), // 不可以省略rewrite
       },

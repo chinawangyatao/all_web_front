@@ -11,8 +11,11 @@ const useHomeStore = defineStore("home", {
   actions: {
     // 获取列表数据
     async getUserData() {
+      this.categoryList = []
       const res = await getUser();
-      this.categoryList = res;
+      for (let resKey in res) {
+        this.categoryList.push(res[resKey])
+      }
     },
     // 获取关于自己数据
     async getAboutUsData() {
@@ -22,6 +25,7 @@ const useHomeStore = defineStore("home", {
     // 获取最近文章数据
     async getNewArticleData() {
       const res = await getNewArticle();
+      console.log(res)
       this.newArticleList = res;
     },
   },

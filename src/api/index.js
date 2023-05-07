@@ -3,39 +3,39 @@ import request from "@/utils/request";
 // 导航栏接口
 export const getUser = () => {
   return request({
-    url: "/users",
+    url: "/router",
   });
 };
 
 // 关于自己接口
 export const getAboutUs = () => {
   return request({
-    url: "/aboutUs",
+    url: "/blog-articles/about_us",
   });
 };
 // 最新文章接口
 export const getNewArticle = () => {
   return request({
-    url: "/newArticle",
+    url: "/blog-articles",
   });
 };
 // 代码块接口
 export const getCode = () => {
   return request({
-    url: "/codemodule",
+    url: "/blog-articles",
   });
 };
 
 // 奇思妙想屋子接口
 export const getHouse = () => {
   return request({
-    url: "/house",
+    url: "/blog-comment/house",
   });
 };
 
 // 推荐接口
 export const getRecommend = () => {
   return request({
-    url: "/recommend",
+    url: "/blog-articles/recommend",
   });
 };
