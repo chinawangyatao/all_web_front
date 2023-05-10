@@ -210,22 +210,7 @@ import ArticleDetails from "@/views/detailsPage/articleDetails.vue";
 const { home } = useStore();
 onMounted(() => {
   home.getNewArticleData();
-  // getAboutUsData();
-  // getcodeData();
-  // gethouseData();
-  // getRecommendData();
 });
-
-
-
-
-
-
-
-
-
-
-
 // 获取关于自己数据
 let titleText = ref("");
 const getAboutUsData = async () => {
